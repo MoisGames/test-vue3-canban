@@ -65,20 +65,21 @@ let cards = ref([])
 cards = firstList.value
 
 function sortRatingDown() {
-    firstList.value.sort((a,b) => b.rating.rate + a.rating.rate);
-    secondList.value.sort((a,b) => b.rating.rate + a.rating.rate);
-    lastList.value.sort((a,b) => b.rating.rate + a.rating.rate);
-}
-function sortRatingUp() {
     firstList.value.sort((a,b) => b.rating.rate - a.rating.rate);
     secondList.value.sort((a,b) => b.rating.rate - a.rating.rate);
     lastList.value.sort((a,b) => b.rating.rate - a.rating.rate);
+}
+function sortRatingUp() {
+    firstList.value.sort((a,b) => a.rating.rate - b.rating.rate);
+    secondList.value.sort((a,b) => a.rating.rate - b.rating.rate);
+    lastList.value.sort((a,b) => a.rating.rate - b.rating.rate);
 }
 function sortRatingRand() {
     firstList.value.rand();
     secondList.value.rand();
     lastList.value.rand();
 }
+console.log(firstList.value, "firstList из PanelSort v.2");
 
 
 // const sortListRatingDown = inject('sortListRatingDown')

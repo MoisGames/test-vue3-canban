@@ -167,14 +167,14 @@
     getLocalCards();
     cards = cards.value.sort((a, b) => b.rating.rate - a.rating.rate);
   }
-  function sortListRatingUp() {
-    getLocalCards();
-    cards = cards.value.sort((a, b) => b.rating.rate + a.rating.rate);
-  }
-  function sortListRatingDefault() {
-    getLocalCards();
-    cards = cards.value.rand();
-  }
+  // function sortListRatingUp() {
+  //   getLocalCards();
+  //   cards = cards.value.sort((a, b) => b.rating.rate + a.rating.rate);
+  // }
+  // function sortListRatingDefault() {
+  //   getLocalCards();
+  //   cards = cards.value.rand();
+  // }
   // provide('sortListRatingDown', sortListRatingDown)
   // provide('sortListRatingUp', sortListRatingUp)
   // provide('sortListRatingDefault', sortListRatingDefault)
