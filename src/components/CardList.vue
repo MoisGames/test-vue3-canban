@@ -4,6 +4,7 @@
     @drop="onDrop($event, options.id)"
     @dragover.prevent
     @dragenter.prevent>
+    <PanelSort/>
     <div class="title">
       <h2>
         {{ options.title }}
@@ -41,6 +42,7 @@
   import { ref, inject } from 'vue';
   import CardItem from './CardItem.vue';
   import CardForm from './CardForm.vue';
+import PanelSort from './PanelSort.vue';
 
   const firstList = inject('firstList');
   const secondList = inject('secondList');
