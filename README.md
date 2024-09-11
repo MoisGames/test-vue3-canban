@@ -34,3 +34,4 @@ https://ev-climb.github.io/canban/
 
 ### Кто сделал: 
 - Моисеенко Владислав
+- https://test-vue3-canban-9lvk-m7ihx7or9-moisgames-projects.vercel.app/
