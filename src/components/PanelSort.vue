@@ -75,11 +75,16 @@ function sortRatingUp() {
     lastList.value.sort((a,b) => a.rating.rate - b.rating.rate);
 }
 function sortRatingRand() {
-    firstList.value.rand();
-    secondList.value.rand();
-    lastList.value.rand();
+    firstList.value.sort(function(){
+        return Math.random() - 0.5;});
+
+    secondList.value.sort(function(){
+  return Math.random() - 0.5;});
+
+    lastList.value.sort(function(){
+  return Math.random() - 0.5;});
 }
-console.log(firstList.value, "firstList из PanelSort v.2");
+
 
 
 // const sortListRatingDown = inject('sortListRatingDown')
