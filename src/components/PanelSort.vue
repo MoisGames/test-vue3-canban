@@ -13,7 +13,7 @@
                             variant="tonal"
                             class="sort-btn"
                             color="blue"
-                            @click="test" 
+                            @click="sortRatingDown" 
                             />
                     </template>
         </v-tooltip>
@@ -27,7 +27,7 @@
                             variant="tonal"
                             class="sort-btn"
                             color="blue"
-                            @click="sortListRatingUp" 
+                            @click="sortRatingUp" 
                             />
                     </template>
         </v-tooltip>
@@ -41,7 +41,7 @@
                             variant="tonal"
                             class="sort-btn"
                             color="blue"
-                            @click="sortListRatingDefault" 
+                            @click="sortRatingRand" 
                             />
                     </template>
         </v-tooltip>
@@ -65,19 +65,19 @@ let cards = ref([])
 cards = firstList.value
 
 function sortRatingDown() {
-    firstList.value.sort((a,b) => b.rating.rate + a.rating.rate)
-    secondList.value.sort((a,b) => b.rating.rate + a.rating.rate)
-    lastList.value.sort((a,b) => b.rating.rate + a.rating.rate)
+    firstList.value.sort((a,b) => b.rating.rate + a.rating.rate);
+    secondList.value.sort((a,b) => b.rating.rate + a.rating.rate);
+    lastList.value.sort((a,b) => b.rating.rate + a.rating.rate);
 }
 function sortRatingUp() {
-    firstList.value.sort((a,b) => b.rating.rate - a.rating.rate)
-    secondList.value.sort((a,b) => b.rating.rate - a.rating.rate)
-    lastList.value.sort((a,b) => b.rating.rate - a.rating.rate)
+    firstList.value.sort((a,b) => b.rating.rate - a.rating.rate);
+    secondList.value.sort((a,b) => b.rating.rate - a.rating.rate);
+    lastList.value.sort((a,b) => b.rating.rate - a.rating.rate);
 }
 function sortRatingRand() {
-    firstList.value.rand()
-    secondList.value.rand()
-    lastList.value.rand()
+    firstList.value.rand();
+    secondList.value.rand();
+    lastList.value.rand();
 }
 
 
