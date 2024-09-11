@@ -42,7 +42,7 @@
   import { ref, inject } from 'vue';
   import CardItem from './CardItem.vue';
   import CardForm from './CardForm.vue';
-import PanelSort from './PanelSort.vue';
+  import PanelSort from './PanelSort.vue';
 
   const firstList = inject('firstList');
   const secondList = inject('secondList');
@@ -80,7 +80,8 @@ import PanelSort from './PanelSort.vue';
     }
   }
   getLocalCards();
-
+  // console.log(cards.value, "CardList - то что находится в cards");
+  
   function addCard() {
     cards.value.unshift(form.value);
     isNewCardDialogOpen.value = false;

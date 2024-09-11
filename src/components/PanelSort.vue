@@ -1,5 +1,5 @@
-<template>
-    <v-toolbar flat>
+<template >
+    <v-toolbar flat ref="cardItemRef">
         <v-toolbar-title class="text-black" >
           Сортировать рейтинг по:
         </v-toolbar-title>
@@ -13,7 +13,7 @@
                             variant="tonal"
                             class="sort-btn"
                             color="blue"
-                            @click="sortList" 
+                            @click="test" 
                             />
                     </template>
         </v-tooltip>
@@ -27,7 +27,7 @@
                             variant="tonal"
                             class="sort-btn"
                             color="blue"
-                            @click="sortList" 
+                            @click="sortListRatingUp" 
                             />
                     </template>
         </v-tooltip>
@@ -41,19 +41,54 @@
                             variant="tonal"
                             class="sort-btn"
                             color="blue"
-                            @click="sortList" 
+                            @click="sortListRatingDefault" 
                             />
                     </template>
         </v-tooltip>
       </v-toolbar>
 </template>
 
-<script>
-//     export default {
-//   components: {
-//     PanelSort
-//   }
+<script setup>
+import { inject, ref} from 'vue';
+
+
+const firstList = inject('firstList');
+const secondList = inject('secondList');
+const lastList = inject('lastList');
+
+const props = defineProps({
+    options: {},
+  });
+
+let cards = ref([])
+
+cards = firstList.value
+
+function sortRatingDown() {
+    firstList.value.sort((a,b) => b.rating.rate + a.rating.rate)
+    secondList.value.sort((a,b) => b.rating.rate + a.rating.rate)
+    lastList.value.sort((a,b) => b.rating.rate + a.rating.rate)
+}
+function sortRatingUp() {
+    firstList.value.sort((a,b) => b.rating.rate - a.rating.rate)
+    secondList.value.sort((a,b) => b.rating.rate - a.rating.rate)
+    lastList.value.sort((a,b) => b.rating.rate - a.rating.rate)
+}
+function sortRatingRand() {
+    firstList.value.rand()
+    secondList.value.rand()
+    lastList.value.rand()
+}
+
+
+// const sortListRatingDown = inject('sortListRatingDown')
+// const sortListRatingUp = inject('sortListRatingUp')
+// const sortListRatingDefault = inject('sortListRatingDefault')
+
+// function test() {
+//     sortListRatingDown()
 // }
+  
 </script>
 
 <style lang="scss" scoped>

@@ -48,7 +48,7 @@
           @click="isDeleteCardDialogOpen = true" />
       </template>
     </v-tooltip>
-    <v-tooltip text="Сортировка по рейтингу">
+    <v-tooltip text="Сортировка рейтинга по убыванию">
       <template v-slot:activator="{ props }">
         <v-btn
           v-bind="props"
@@ -57,7 +57,7 @@
           variant="tonal"
           class="sort-btn"
           color="blue"
-          @click="sortList" />
+          @click="sortListRatingDown" />
       </template>
     </v-tooltip>
 
@@ -102,7 +102,7 @@
 </template>
 
 <script setup>
-  import { ref, inject, computed } from 'vue';
+  import { ref, inject, computed, provide} from 'vue';
   import CardForm from './CardForm.vue';
 
   const firstList = inject('firstList');
@@ -163,10 +163,22 @@
     }
   }
 
-  function sortList() {
+  function sortListRatingDown() {
     getLocalCards();
     cards = cards.value.sort((a, b) => b.rating.rate - a.rating.rate);
   }
+  function sortListRatingUp() {
+    getLocalCards();
+    cards = cards.value.sort((a, b) => b.rating.rate + a.rating.rate);
+  }
+  function sortListRatingDefault() {
+    getLocalCards();
+    cards = cards.value.rand();
+  }
+  // provide('sortListRatingDown', sortListRatingDown)
+  // provide('sortListRatingUp', sortListRatingUp)
+  // provide('sortListRatingDefault', sortListRatingDefault)
+
 </script>
 
 <style lang="scss" scoped>

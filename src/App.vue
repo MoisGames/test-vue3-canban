@@ -44,7 +44,8 @@
   };
 
   getAllCards();
-
+  console.log(firstList, "firstList из App");
+  
   provide('firstList', firstList);
   provide('secondList', secondList);
   provide('lastList', lastList);
