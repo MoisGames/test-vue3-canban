@@ -8,7 +8,7 @@
                     <template v-slot:activator="{ props }">
                         <v-btn
                             v-bind="props"
-                            icon="mdi-sort"
+                            icon="mdi-sort-variant"
                             density="compact"
                             variant="tonal"
                             class="sort-btn"
@@ -36,7 +36,7 @@
                     <template v-slot:activator="{ props }">
                         <v-btn
                             v-bind="props"
-                            icon="mdi-sort"
+                            icon="mdi-sort-variant-off"
                             density="compact"
                             variant="tonal"
                             class="sort-btn"
